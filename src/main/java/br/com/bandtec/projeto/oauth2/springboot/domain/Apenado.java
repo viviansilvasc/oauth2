@@ -9,7 +9,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_apenado")
 
 public class Apenado {
     @Id
@@ -20,9 +19,7 @@ public class Apenado {
     
     private String nome;
     
-    @ManyToOne
-    private Condenacao condenacao;
-
+    
     public Integer getId() {
         return id;
     }
@@ -39,14 +36,7 @@ public class Apenado {
         this.nome = nome;
     }
 
-    public Condenacao getCondenacao() {
-        return condenacao;
-    }
-
-    public void setCondenacao(Condenacao condenacao) {
-        this.condenacao = condenacao;
-    }
-    
+       
     
     
     

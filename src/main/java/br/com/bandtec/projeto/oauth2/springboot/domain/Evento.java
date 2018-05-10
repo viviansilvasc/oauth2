@@ -10,13 +10,12 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_eventos")
 
-public class Eventos {
+public class Evento {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
    
-    @Column(name = "id_eventos")
+    @Column(name = "id_evento")
     private Integer id;
     
     private Integer anos;
@@ -30,8 +29,8 @@ public class Eventos {
     @ManyToOne
     private Condenacao condenacao;
     
-    @OneToOne
-    private Tipo_Evento tipo_evento;
+    @ManyToOne
+    private TipoEvento tipoEvento;
 
     public Integer getId() {
         return id;
@@ -81,12 +80,12 @@ public class Eventos {
         this.condenacao = condenacao;
     }
 
-    public Tipo_Evento getTipo_evento() {
-        return tipo_evento;
+    public TipoEvento getTipoEvento() {
+        return tipoEvento;
     }
 
-    public void setTipo_evento(Tipo_Evento tipo_evento) {
-        this.tipo_evento = tipo_evento;
+    public void setTipoEvento(TipoEvento tipoEvento) {
+        this.tipoEvento = tipoEvento;
     }
     
     

@@ -6,17 +6,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_condenacao")
-
 
 public class Condenacao {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-   
     @Column(name = "id_condenacao")
     private Integer id;
     
@@ -26,9 +24,12 @@ public class Condenacao {
     
     private Integer dias;
     
-    private Date data_inicio;
+    private Date dataInicio;
     
-    private Boolean crime_hediondo;
+    private Boolean crimeHediondo;
+    
+    @ManyToOne
+    private Apenado apenado;
 
     public Integer getId() {
         return id;
@@ -62,20 +63,28 @@ public class Condenacao {
         this.dias = dias;
     }
 
-    public Date getData_inicio() {
-        return data_inicio;
+    public Date getDataInicio() {
+        return dataInicio;
     }
 
-    public void setData_inicio(Date data_inicio) {
-        this.data_inicio = data_inicio;
+    public void setDataInicio(Date dataInicio) {
+        this.dataInicio = dataInicio;
     }
 
-    public Boolean getCrime_hediondo() {
-        return crime_hediondo;
+    public Boolean getCrimeHediondo() {
+        return crimeHediondo;
     }
 
-    public void setCrime_hediondo(Boolean crime_hediondo) {
-        this.crime_hediondo = crime_hediondo;
+    public void setCrimeHediondo(Boolean crimeHediondo) {
+        this.crimeHediondo = crimeHediondo;
+    }
+
+    public Apenado getApenado() {
+        return apenado;
+    }
+
+    public void setApenado(Apenado apenado) {
+        this.apenado = apenado;
     }
     
     
