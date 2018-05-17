@@ -1,10 +1,12 @@
 br\com\bandtec\projeto\oauth2\springboot\excecoes\TokenCriadoExcecao.class
 br\com\bandtec\projeto\oauth2\springboot\util\Formatador.class
+br\com\bandtec\projeto\oauth2\springboot\domain\Condenacao.class
 br\com\bandtec\projeto\oauth2\springboot\repositorio\UsuarioRepositorio.class
 br\com\bandtec\projeto\oauth2\springboot\UiSecurityConfig.class
 br\com\bandtec\projeto\oauth2\springboot\util\RoleEnum.class
 br\com\bandtec\projeto\oauth2\springboot\seguranca\Publico.class
 br\com\bandtec\projeto\oauth2\springboot\modelos\SegurancaAPI.class
+br\com\bandtec\projeto\oauth2\springboot\domain\Apenado.class
 br\com\bandtec\projeto\oauth2\springboot\modelos\Perfil.class
 br\com\bandtec\projeto\oauth2\springboot\modelos\Permissao.class
 br\com\bandtec\projeto\oauth2\springboot\seguranca\SegurancaInterceptor.class
@@ -15,6 +17,7 @@ br\com\bandtec\projeto\oauth2\springboot\util\Modelos.class
 br\com\bandtec\projeto\oauth2\springboot\UserController.class
 br\com\bandtec\projeto\oauth2\springboot\util\SegurancaAPIThreadLocal.class
 br\com\bandtec\projeto\oauth2\springboot\web\HomeController.class
+br\com\bandtec\projeto\oauth2\springboot\domain\Evento.class
 br\com\bandtec\projeto\oauth2\springboot\SecurityConfig.class
 br\com\bandtec\projeto\oauth2\springboot\excecoes\TokenExpiradoExcecao.class
 br\com\bandtec\projeto\oauth2\springboot\excecoes\UsuarioOuSenhaInvalidaExcecao.class
@@ -26,4 +29,5 @@ br\com\bandtec\projeto\oauth2\springboot\modelos\Usuario.class
 br\com\bandtec\projeto\oauth2\springboot\excecoes\TokenInvalidoExcecao.class
 br\com\bandtec\projeto\oauth2\springboot\util\DateUtil.class
 br\com\bandtec\projeto\oauth2\springboot\util\OAuthController.class
+br\com\bandtec\projeto\oauth2\springboot\domain\TipoEvento.class
 br\com\bandtec\projeto\oauth2\springboot\AuthorizationServerApplication.class
