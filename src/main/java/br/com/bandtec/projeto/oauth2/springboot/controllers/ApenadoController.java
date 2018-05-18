@@ -33,11 +33,11 @@ public class ApenadoController {
         return ResponseEntity.ok(apenados);
     }
     
-    @GetMapping("/apenado/{nome}")
-    public ResponseEntity pesquisarPorNome(
-            @PathVariable("nome") String nome){
+    @GetMapping("/apenado/{id}")
+    public ResponseEntity pesquisarPorID(
+            @PathVariable("id") Integer id){
         
-        List<Apenado> encontrados = this.repository.findByNome(nome);
+        List<Apenado> encontrados = this.repository.findById(id);
         
         return ResponseEntity.ok(encontrados);
     }

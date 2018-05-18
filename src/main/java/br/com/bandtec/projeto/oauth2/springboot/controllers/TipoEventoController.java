@@ -33,20 +33,20 @@ public class TipoEventoController {
         return ResponseEntity.ok(condenacoes);
     }
     
+    @GetMapping("/tipoevento/{id}")
+    public ResponseEntity pesquisarPorID(
+            @PathVariable("id") Integer id){
+        
+        List<TipoEvento> encontrados = this.repository.findById(id);
+        
+        return ResponseEntity.ok(encontrados);
+    }
+    
     @PostMapping
     public ResponseEntity criar(@RequestBody TipoEvento tipoEvento){
         this.repository.save(tipoEvento);
         
         return ResponseEntity.status(HttpStatus.CREATED).build();
-    }
-    
-    @DeleteMapping("/{id}")
-    public ResponseEntity excluir(
-        @PathVariable("id") Integer id){
-        
-        this.repository.delete(id);
-        
-        return ResponseEntity.ok().build();
     }
     
     @PutMapping

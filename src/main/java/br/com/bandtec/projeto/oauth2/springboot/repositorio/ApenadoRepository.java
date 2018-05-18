@@ -8,5 +8,5 @@ import org.springframework.data.repository.CrudRepository;
 public interface ApenadoRepository 
         extends CrudRepository<Apenado, Integer>{
     
-    List<Apenado> findByNome(String nome);
+    List<Apenado> findById(Integer id);
 }

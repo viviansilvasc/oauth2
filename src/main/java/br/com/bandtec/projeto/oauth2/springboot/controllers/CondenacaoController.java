@@ -2,6 +2,7 @@
 package br.com.bandtec.projeto.oauth2.springboot.controllers;
 
 import br.com.bandtec.projeto.oauth2.springboot.domain.Condenacao;
+import br.com.bandtec.projeto.oauth2.springboot.presenters.CondenacaoPresenter;
 import br.com.bandtec.projeto.oauth2.springboot.repositorio.CondenacaoRepository;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,27 @@ public class CondenacaoController {
     public ResponseEntity getTodos(){
         Iterable<Condenacao> condenacoes = this.repository.findAll();
         
-        return ResponseEntity.ok(condenacoes);
+          List<CondenacaoPresenter> condenacaoP = new ArrayList<>();
+          
+          condenacoes.forEach(condenacao -> {
+            condenacaoP.add(new CondenacaoPresenter(condenacao));
+          });
+        return ResponseEntity.ok(condenacaoP);
+    }
+    
+    @GetMapping("/condenacao/{id}")
+    public ResponseEntity pesquisarPorID(
+            @PathVariable("id") Integer id){
+        
+        List<Condenacao> encontrados = this.repository.findById(id);
+        
+        List<CondenacaoPresenter> condenacaoP = new ArrayList<>();
+          
+          encontrados.forEach(condenacao -> {
+            condenacaoP.add(new CondenacaoPresenter(condenacao));
+          });
+        
+        return ResponseEntity.ok(condenacaoP);
     }
     
     @PostMapping

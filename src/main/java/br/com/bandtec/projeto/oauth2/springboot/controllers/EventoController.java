@@ -32,6 +32,15 @@ public class EventoController {
         return ResponseEntity.ok(eventos);
     }
     
+    @GetMapping("/evento/{id}")
+    public ResponseEntity pesquisarPorID(
+            @PathVariable("id") Integer id){
+        
+        List<Evento> encontrados = this.repository.findById(id);
+        
+        return ResponseEntity.ok(encontrados);
+    }
+    
     @PostMapping
     public ResponseEntity criar (@RequestBody Evento evento){
         this.repository.save(evento);
