@@ -43,15 +43,9 @@ public class CondenacaoController {
     public ResponseEntity pesquisarPorID(
             @PathVariable("id") Integer id){
         
-        List<Condenacao> encontrados = this.repository.findById(id);
+        Condenacao encontrado = this.repository.findOne(id);
         
-        List<CondenacaoPresenter> condenacaoP = new ArrayList<>();
-          
-          encontrados.forEach(condenacao -> {
-            condenacaoP.add(new CondenacaoPresenter(condenacao));
-          });
-        
-        return ResponseEntity.ok(condenacaoP);
+        return ResponseEntity.ok(encontrado);
     }
     
     @PostMapping

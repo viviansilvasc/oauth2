@@ -1,6 +1,6 @@
 package br.com.bandtec.projeto.oauth2.springboot.domain;
 
-import java.util.Date;
+import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -24,7 +24,7 @@ public class Condenacao {
     
     private Integer dias;
     
-    private Date dataInicio;
+    private LocalDate dataInicio;
     
     private Boolean crimeHediondo;
     
@@ -63,14 +63,15 @@ public class Condenacao {
         this.dias = dias;
     }
 
-    public Date getDataInicio() {
+    public LocalDate getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(Date dataInicio) {
+    public void setDataInicio(LocalDate dataInicio) {
         this.dataInicio = dataInicio;
     }
 
+  
     public Boolean getCrimeHediondo() {
         return crimeHediondo;
     }

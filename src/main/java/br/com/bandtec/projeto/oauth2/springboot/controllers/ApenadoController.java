@@ -37,7 +37,7 @@ public class ApenadoController {
     public ResponseEntity pesquisarPorID(
             @PathVariable("id") Integer id){
         
-        List<Apenado> encontrados = this.repository.findById(id);
+        Apenado encontrados = this.repository.findOne(id);
         
         return ResponseEntity.ok(encontrados);
     }

@@ -37,9 +37,9 @@ public class TipoEventoController {
     public ResponseEntity pesquisarPorID(
             @PathVariable("id") Integer id){
         
-        List<TipoEvento> encontrados = this.repository.findById(id);
+        TipoEvento encontrado = this.repository.findOne(id);
         
-        return ResponseEntity.ok(encontrados);
+        return ResponseEntity.ok(encontrado);
     }
     
     @PostMapping
