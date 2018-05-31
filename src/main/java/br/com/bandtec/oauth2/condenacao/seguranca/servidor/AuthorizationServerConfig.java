@@ -31,11 +31,11 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients
                 .inMemory()
-                .withClient("loginbandtec")
-                .secret("senhabandtec")
+                .withClient("admin")
+                .secret("adminh2o")
                 .authorizedGrantTypes("client_credentials")
                 .scopes("read", "write")
-                .accessTokenValiditySeconds(60)
+                .accessTokenValiditySeconds(900)
                 .resourceIds("bandtec-condenacao-api");
     }
 

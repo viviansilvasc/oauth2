@@ -8,7 +8,6 @@ br\com\bandtec\oauth2\condenacao\repositorio\ApenadoRepository.class
 br\com\bandtec\oauth2\condenacao\controllers\HomeController.class
 br\com\bandtec\oauth2\condenacao\controllers\TipoEventoController.class
 br\com\bandtec\oauth2\condenacao\domain\Calculadora.class
-br\com\bandtec\oauth2\condenacao\ExemploApiApplication.class
 br\com\bandtec\oauth2\condenacao\controllers\CondenacaoController.class
 br\com\bandtec\oauth2\condenacao\domain\TipoEvento.class
 br\com\bandtec\oauth2\condenacao\seguranca\cliente\ConfiguracaoAutorizacaoCliente.class
