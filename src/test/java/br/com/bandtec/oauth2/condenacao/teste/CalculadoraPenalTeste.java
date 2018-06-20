@@ -1,7 +1,7 @@
 package br.com.bandtec.oauth2.condenacao.teste;
 
 
-import br.com.bandtec.calculadoraexecucaopenal.CalculadoraPenal;
+import br.com.bandtec.oauth2.condenacao.domain.CalculadoraPenal;
 import java.util.Calendar;
 import org.junit.After;
 import org.junit.AfterClass;
