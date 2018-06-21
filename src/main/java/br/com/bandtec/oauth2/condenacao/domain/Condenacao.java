@@ -2,6 +2,7 @@ package br.com.bandtec.oauth2.condenacao.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
+import java.util.Calendar;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Condenacao {
     private Integer dias;
     
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private LocalDate dataInicio;
+    private Calendar dataInicio;
     
     private Boolean crimeHediondo;
     
@@ -65,11 +66,11 @@ public class Condenacao {
         this.dias = dias;
     }
 
-    public LocalDate getDataInicio() {
+    public Calendar getDataInicio() {
         return dataInicio;
     }
 
-    public void setDataInicio(LocalDate dataInicio) {
+    public void setDataInicio(Calendar dataInicio) {
         this.dataInicio = dataInicio;
     }
 

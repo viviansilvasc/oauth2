@@ -4,7 +4,10 @@ import br.com.bandtec.oauth2.condenacao.domain.Apenado;
 import br.com.bandtec.oauth2.condenacao.domain.Calculadora;
 import br.com.bandtec.oauth2.condenacao.domain.Condenacao;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.Instant;
 import java.time.LocalDate;
+import java.time.ZoneId;
+import java.util.Date;
 
 public class CondenacaoPresenter {
     
@@ -21,14 +24,16 @@ public class CondenacaoPresenter {
     
     private Apenado apenado;
     
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-    private Calculadora calculadora;
+//    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private Calculadora calculadora = new Calculadora();
+    
+    public CondenacaoPresenter(){}
     
     public CondenacaoPresenter(Condenacao condenacao){
         this.meses = condenacao.getMeses();
         this.dias = condenacao.getDias();
         this.anos = condenacao.getAnos();
-        this.dataInicio = condenacao.getDataInicio();
+        this.dataInicio = condenacao.getDataInicio().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         this.crimeHediondo = condenacao.getCrimeHediondo();
         this.dataSoltura = calculadora.calcularSoltura(this.dataInicio, 
                                             this.dias, this.meses, this.anos);
@@ -41,10 +46,6 @@ public class CondenacaoPresenter {
 
     public void setApenado(Apenado apenado) {
         this.apenado = apenado;
-    }
-
-    public Calculadora getCalculadora() {
-        return calculadora;
     }
     
     public Integer getAnos() {
