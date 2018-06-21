@@ -35,7 +35,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .secret("adminh2o")
                 .authorizedGrantTypes("client_credentials")
                 .scopes("read", "write")
-                .accessTokenValiditySeconds(900)
+                .accessTokenValiditySeconds(1600)
                 .resourceIds("bandtec-condenacao-api");
     }
 

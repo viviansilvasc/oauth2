@@ -1,5 +1,6 @@
 package br.com.bandtec.oauth2.condenacao.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,6 +25,7 @@ public class Condenacao {
     
     private Integer dias;
     
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate dataInicio;
     
     private Boolean crimeHediondo;

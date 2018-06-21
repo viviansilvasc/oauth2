@@ -11,6 +11,6 @@ public class HomeController {
 
 	@GetMapping
 	public ResponseEntity home() {
-		return ResponseEntity.ok("Seja bem vindo!");
+		return ResponseEntity.ok("Apresentação Escritório de Projetos 4!");
 	}
 }
