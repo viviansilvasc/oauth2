@@ -30,7 +30,8 @@ public class CondenacaoPresenter {
         this.anos = condenacao.getAnos();
         this.dataInicio = condenacao.getDataInicio();
         this.crimeHediondo = condenacao.getCrimeHediondo();
-        this.dataSoltura = calculadora.calcularSoltura(dataInicio, dias, meses, anos);
+        this.dataSoltura = calculadora.calcularSoltura(this.dataInicio, 
+                                            this.dias, this.meses, this.anos);
         this.apenado = condenacao.getApenado();
     }
 
